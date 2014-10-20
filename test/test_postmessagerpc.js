@@ -3,7 +3,7 @@ var Promise = require("lie");
 
 var assert = require("assert");
 
-it("basic tests", function (done) {
+it("should call the served function successfully", function (done) {
   function postMessage(msg) {
     rpc.onMessage(msg);
   }

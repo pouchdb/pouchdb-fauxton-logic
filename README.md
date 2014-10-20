@@ -13,6 +13,11 @@ These are then converted to PouchDB method calls by
 is a [CouchDB response object](http://docs.couchdb.org/en/latest/json-structure.html#response-object),
 which is returned by the mock xhr object as the response to the request.
 
+Demo
+----
+
+https://ma.rtendevri.es/fauxton/
+
 Tests
 -----
 
