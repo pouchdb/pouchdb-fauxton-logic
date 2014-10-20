@@ -1,0 +1,30 @@
+{
+  "name": "pouchdb-fauxton",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Runs Fauxton on top of PouchDB",
+  "main": "index.js",
+  "keywords": [
+    "pouchdb",
+    "fauxton",
+    "offline",
+    "xhr",
+    "interface"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "pouchdb": "*",
+    "lie": "*",
+    "pouchdb-all-dbs": "*",
+    "random-uuid-v4": "*",
+    "pouchdb-route": "*"
+  },
+  "scripts": {
+    "build": "browserify lib/index.js -o fauxton/js/pouchdb-offline.js",
+    "build-injected": "mkdir -p dist && browserify lib/index-injected.js -o dist/injected.js",
+    "build-postmessagerpc": "browserify lib/postmessagerpc.js --standalone PostMessageRPC -o dist/postmessagerpc.js",
+    "build-firefox": "browserify lib/index-firefox-addon.js -o fauxton/js/pouchdb-offline.js && npm run build-injected",
+    "build-chrome": "browserify lib/index-chrome-extension.js -o fauxton/js/pouchdb-offline.js && npm run build-injected && npm run build-postmessagerpc",
+    "test": "mocha"
+  }
+}
