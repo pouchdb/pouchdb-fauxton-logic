@@ -20,15 +20,16 @@
     "pouchdb-route": "^1.0.2"
   },
   "devDependencies": {
+    "brfs": "^1.3.0",
     "browserify": "^6.1.0"
   },
   "scripts": {
     "build-debug": "./node_modules/.bin/browserify lib/index.js -o fauxton/js/pouchdb-offline.js",
     "build": "npm run build-debug && uglifyjs fauxton/js/pouchdb-offline.js -o fauxton/js/pouchdb-offline.js",
-    "build-injected": "mkdir -p dist && ./node_modules/.bin/browserify -x lie lib/index-injected.js -o dist/injected.js",
-    "build-postmessagerpc": "./node_modules/.bin/browserify lib/postmessagerpc.js -x lie --standalone PostMessageRPC -o dist/postmessagerpc.js",
-    "build-firefox": "./node_modules/.bin/browserify lib/index-firefox-addon.js -x lie -o fauxton/js/pouchdb-offline.js && npm run build-injected",
-    "build-chrome": "./node_modules/.bin/browserify lib/index-chrome-extension.js -x lie -o fauxton/js/pouchdb-offline.js && npm run build-injected && npm run build-postmessagerpc",
+    "build-injected": "mkdir -p dist && ./node_modules/.bin/browserify lib/index-injected.js -o dist/injected.js",
+    "build-postmessagerpc": "./node_modules/.bin/browserify lib/postmessagerpc.js --standalone PostMessageRPC -o dist/postmessagerpc.js",
+    "build-firefox": "./node_modules/.bin/browserify lib/index-firefox-addon.js -o fauxton/js/pouchdb-offline.js && npm run build-injected",
+    "build-chrome": "./node_modules/.bin/browserify lib/index-chrome-extension.js -o fauxton/js/pouchdb-offline.js && npm run build-injected && npm run build-postmessagerpc",
     "build-pouchdb-plugin": "npm run build-debug && ./node_modules/.bin/browserify lib/index-pouchdb-plugin.js -t brfs -s PouchDBFauxton -o dist/pouchdb-plugin.js",
     "test": "mocha"
   }

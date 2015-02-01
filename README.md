@@ -1,6 +1,8 @@
 pouchdb-fauxton-logic
 =====================
 
+[![Build Status](https://travis-ci.org/marten-de-vries/pouchdb-fauxton-logic.svg)](https://travis-ci.org/marten-de-vries/pouchdb-fauxton-logic)
+
 This repository contains the JavaScript that's added to
 [pouchdb-fauxton-base](https://github.com/marten-de-vries/pouchdb-fauxton-base)
 to make a working version of Fauxton running on top of PouchDB.
