@@ -1,6 +1,8 @@
 pouchdb-fauxton-logic
 =====================
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/pouchdb/pouchdb-fauxton-logic.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/pouchdb/pouchdb-fauxton-logic.svg)](https://travis-ci.org/pouchdb/pouchdb-fauxton-logic)
 
 This repository contains the JavaScript that's added to
